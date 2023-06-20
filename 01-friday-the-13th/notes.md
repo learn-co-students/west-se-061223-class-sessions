@@ -22,8 +22,14 @@ As a user, I can:
   - [x] add event listener to the button
   - [x] cb needs a contitional that sets the button text
   - [x] cb will flip flip the value of watched for the detail movie obj
-  
+
 5. Enter a number of drops for each movie and have it persist in the DOM
+ - [x] select the form
+ - [x] add listener to form
+ - [x] preventDefault()
+ - [x] get input value form form
+ - [] increment the `blood_amount` for detail movie with input value
+ - [] update the DOM
 
 MANTRA
 1. Get data
