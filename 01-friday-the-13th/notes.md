@@ -14,7 +14,10 @@ As a user, I can:
  - [x] set attributes of DOM elements with selected movie obj properties
  - [x] call render function and send 1st movie obj
 
-3. Click a movie in the nav and see its details in the detail section
+3. Click a movie in the nav and see its details in the detail section 
+  - [x] Add event listener to each <img> in nav
+  - [x] use renderDetail fn from above
+
 4. Click a "watched" button which toggles; it persists only in DOM
 5. Enter a number of drops for each movie and have it persist in the DOM
 
