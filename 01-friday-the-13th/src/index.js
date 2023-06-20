@@ -9,12 +9,23 @@ function getAllMovies(url){
 
 // Render functions
 const nav = document.querySelector('#movie-list')
+const title = document.querySelector('#title')
+const description = document.querySelector('#description')
+const detailImage = document.querySelector("#detail-image")
+const yearReleased = document.querySelector('#year-released')
+
 
 function renderInNav(movieObj){
     const img = document.createElement('img')
-    console.log("🚀 ~ file: index.js:14 ~ renderInNav ~ img:", img)
     img.src = movieObj.image
-    nav.append(img)
+    nav.appendChild(img)
+}
+
+function renderDetail(movieObj){
+    title.textContent = movieObj.title
+    description.textContent = movieObj.description
+    detailImage.src = movieObj.image
+    yearReleased.textContent = movieObj.release_year
 }
 
 
@@ -24,5 +35,6 @@ getAllMovies('http://localhost:3000/movies')
  .then(movieArr => {
     console.log(movieArr)
     movieArr.forEach(renderInNav)
+    renderDetail(movieArr[0])
 })
 

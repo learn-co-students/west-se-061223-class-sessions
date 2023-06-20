@@ -9,6 +9,11 @@ As a user, I can:
  - [x] Append each <img> to anchor
 
 2. View the 1st movie details on page load
+ - [] Fetch data for 1st movie? (if necessary)
+ - [x] select the proper DOM elements
+ - [x] set attributes of DOM elements with selected movie obj properties
+ - [x] call render function and send 1st movie obj
+
 3. Click a movie in the nav and see its details in the detail section
 4. Click a "watched" button which toggles; it persists only in DOM
 5. Enter a number of drops for each movie and have it persist in the DOM
