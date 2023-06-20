@@ -19,6 +19,10 @@ As a user, I can:
   - [x] use renderDetail fn from above
 
 4. Click a "watched" button which toggles; it persists only in DOM
+  - [x] add event listener to the button
+  - [x] cb needs a contitional that sets the button text
+  - [x] cb will flip flip the value of watched for the detail movie obj
+  
 5. Enter a number of drops for each movie and have it persist in the DOM
 
 MANTRA
