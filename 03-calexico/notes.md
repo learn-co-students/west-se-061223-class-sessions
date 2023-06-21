@@ -22,9 +22,9 @@ As a user, I can:
   - [x] get value of cart from DOM
   - [x] calculate the new value and update DOM
 ## Bonus Deliverables
-1. Persist cart value for each item on front end
-2. Calculate *total cost* of cart for all items and display somewhere on page
-3. Persist cart value on the back end with PATCH requests
+1. [x] Persist cart value for each item on front end
+2. [x] Calculate *total cost* of cart for all items and display somewhere on page
+3. [x] Persist cart value on the back end with PATCH requests
 
 ## Data shape
 ```json
