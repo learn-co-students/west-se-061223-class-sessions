@@ -76,14 +76,20 @@ function renderDetail(dishObj){
 }
 
 function displayTotal(dishArr){
+    const span = document.querySelector('#total-orders')
+    const currTotal = dishArr.reduce((sum, dish) => sum + (dish.price * dish.number_in_bag), 0)
+    span.textContent = currTotal
+}
+
+function renderTotalOrderElements(){
     let hr = document.createElement('hr')
     const h3 = document.createElement('h3')
     h3.textContent = 'Order total:'
     const span = document.createElement('span')
+    span.id = 'total-orders'
     h3.append(span)
     document.querySelector('#dish').append(hr, h3)
-    const currTotal = dishArr.reduce((sum, dish) => sum + (dish.price * dish.number_in_bag), 0)
-    span.textContent = currTotal
+
 }
 
 // Initializer
@@ -92,4 +98,5 @@ getAllDishes(URL)
     displayTotal(dishArr)
     dishArr.forEach(renderInMenu);
     renderDetail(dishArr[0]);
-  })
+})
+renderTotalOrderElements()
