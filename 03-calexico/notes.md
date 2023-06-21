@@ -7,6 +7,9 @@ As a user, I can:
   - [x] Add dish name as text to the <span>
   - [x] Append each <span> to anchor
 2. View the details of the first menu item in Dish detail section on page load
+  - [x] Select the DOM elements to modify
+  - [x] Pass one dish to render function (from dish array)
+  - [x] Set element attrs with data from dish obj
 3. Click a menu itme and see it's details displayed in the Dish detail section
 4. Add menu items to 'my cart' Cart only needs to increment when same dish is selected, but can reset wehn another is selected (no persistence front or back end)
 ## Bonus Deliverables
