@@ -11,6 +11,9 @@ As a user, I can:
   - [x] Pass one dish to render function (from dish array)
   - [x] Set element attrs with data from dish obj
 3. Click a menu itme and see it's details displayed in the Dish detail section
+  - [x] add event listeners to each <span> in menu
+  - [x] listen for 'click' event and handle with callback
+  - [x] use renderDetail as event handler
 4. Add menu items to 'my cart' Cart only needs to increment when same dish is selected, but can reset wehn another is selected (no persistence front or back end)
 ## Bonus Deliverables
 1. Persist cart value for each item on front end

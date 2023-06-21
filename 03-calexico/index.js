@@ -24,6 +24,7 @@ function renderInMenu(dishObj){
     // console.log("🚀 ~ file: index.js:18 ~ renderInMenu ~ dishObj:", dishObj)
     const span = document.createElement("span");
     span.textContent = dishObj.name;
+    span.addEventListener('click', () => renderDetail(dishObj))
     menu.append(span)
 }
 
