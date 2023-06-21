@@ -15,6 +15,12 @@ As a user, I can:
   - [x] listen for 'click' event and handle with callback
   - [x] use renderDetail as event handler
 4. Add menu items to 'my cart' Cart only needs to increment when same dish is selected, but can reset wehn another is selected (no persistence front or back end)
+  - [x] select form from DOM
+  - [x] attach event listener and handle 'submit' event
+  - [x] preventDefault() on event
+  - [x] get form value from selected input field OR from event.target
+  - [x] get value of cart from DOM
+  - [x] calculate the new value and update DOM
 ## Bonus Deliverables
 1. Persist cart value for each item on front end
 2. Calculate *total cost* of cart for all items and display somewhere on page

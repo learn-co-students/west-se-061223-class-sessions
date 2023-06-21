@@ -8,6 +8,7 @@ const dishName = document.querySelector('#dish-name')
 const dishDescription = document.querySelector('#dish-description')
 const dishPrice = document.querySelector('#dish-price')
 const numberInCart = document.querySelector('#number-in-cart')
+const form = document.querySelector('#cart-form')
 
 // Fetch fuctions
 function getAllDishes(url){
@@ -16,8 +17,16 @@ function getAllDishes(url){
 }
 
 // Event listeners
+form.addEventListener('submit', addToCart)
 
 // Event handlers 
+function addToCart(event) {
+    event.preventDefault()
+    const numToAdd = Number(document.querySelector('#cart-amount').value)
+    console.log("🚀 ~ file: index.js:27 ~ addToCart ~ numToAdd:", numToAdd)
+    let currCart = Number(numberInCart.textContent)
+    numberInCart.textContent = currCart += numToAdd
+}
 
 // Render functions
 function renderInMenu(dishObj){
@@ -29,7 +38,7 @@ function renderInMenu(dishObj){
 }
 
 function renderDetail(dishObj){
-    console.log("🚀 ~ file: index.js:25 ~ renderDetail ~ dishObj:", dishObj)
+    // console.log("🚀 ~ file: index.js:25 ~ renderDetail ~ dishObj:", dishObj)
     dishImage.src = dishObj.image
     dishName.textContent = dishObj.name
     dishDescription.textContent = dishObj.description
