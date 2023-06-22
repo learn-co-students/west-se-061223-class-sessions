@@ -22,8 +22,12 @@ As a user, I can:
   - [x] call render fn passing new ramenObj
 
 ## Advanced deliverables
+1. [x] See details of the 1st ramen on page load
+2. [] Change the rating and comment with an edit form (no persistence--back)
+3. [x] Delete a ramen from menu (no persistence--back)
 
-## Extra advanced
+### Extra advanced
+1. add persistence to the backend to the above where possible
 
 ## Data shape
 ```json
