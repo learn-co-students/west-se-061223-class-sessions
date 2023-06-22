@@ -8,6 +8,10 @@ As a user, I can:
   - [x] select menu element from DOM (anchor)
   - [x] append <img> to menu
 2. Click on a menu img to see the details of that ramen shown in detail section
+  - [x] add event listeners to <img> in menu
+  - [x] handle events by calling a detail render function
+  - [x] select appropriate elements
+  - [x] assign data to those elements from ramen obj
 3. Submit a form to create a new ramen in the menu (no persistence)
 
 ## Advanced deliverables
@@ -15,6 +19,16 @@ As a user, I can:
 ## Extra advanced
 
 ## Data shape
+```json
+{
+    "id": 1,
+    "name": "Shoyu Ramen",
+    "restaurant": "Nonono",
+    "image": "./assets/ramen/shoyu.jpg",
+    "rating": 7,
+    "comment": "Delish. Can't go wrong with a classic!"
+  }
+  ```
 
 ## Endpoints
 baseURL: http://localhost:3000
