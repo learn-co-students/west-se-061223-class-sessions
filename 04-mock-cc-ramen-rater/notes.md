@@ -13,6 +13,13 @@ As a user, I can:
   - [x] select appropriate elements
   - [x] assign data to those elements from ramen obj
 3. Submit a form to create a new ramen in the menu (no persistence)
+  - [x] select the form
+  - [x] add event listener to form
+  - [x] handle submit event with callback fn
+  - [x] preventDefault()
+  - [x] get values from each input (via the event OR selector)
+  - [x] create new ramenObj with values from form
+  - [x] call render fn passing new ramenObj
 
 ## Advanced deliverables
 

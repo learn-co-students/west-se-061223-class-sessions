@@ -9,6 +9,8 @@ const ramenName = document.querySelector(".name");
 const restaurant = document.querySelector(".restaurant");
 const ratingDisplay = document.querySelector('#rating-display')
 const commentDisplay = document.querySelector('#comment-display')
+const newRamen = document.querySelector("#new-ramen")
+// console.log("🚀 ~ file: index.js:13 ~ newRamen:", newRamen)
 
 // Fetch functions
 function getRamen(url) {
@@ -16,8 +18,21 @@ function getRamen(url) {
 }
 
 // Event listeners
+newRamen.addEventListener('submit', (e) => handleNewRamen(e))
 
 // Event handlers
+function handleNewRamen(e){
+    e.preventDefault();
+    console.log("🚀 ~ file: index.js:25 ~ handleNewRamen ~ e:", e.target)
+    const newRamen = {
+        name: e.target.name.value,
+        restaurant: e.target.restaurant.value,
+        image: e.target.image.value,
+        rating: e.target.rating.value,
+        comment: e.target["new-comment"].value
+    }
+    renderInMenu(newRamen)
+}
 
 // Render function
 function renderAllRamen(ramenArr) {
