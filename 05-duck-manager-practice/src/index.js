@@ -27,14 +27,16 @@ const URL = "http://localhost:3000/ducks";
 
 // DOM Selectors
 const duckNav = document.querySelector("#duck-nav");
-console.log("🚀 ~ file: index.js:30 ~ duckNav:", duckNav);
+const duckDisplayName = document.querySelector("#duck-display-name");
+const duckDisplayImage = document.querySelector("#duck-display-image");
+const duckDisplayLikes = document.querySelector("#duck-display-likes");
 
 // Fetch functions
 function getDucks(url) {
   return fetch(url).then((response) => response.json());
 }
 
-// Event listeners
+// Event listeners (for elements already in DOM)
 
 // Event handlers
 
@@ -45,14 +47,25 @@ function renderAllDucksInNav(duckArr) {
 }
 
 function renderOneDuckInNav(duckObj) {
-//   console.log(
-//     "🚀 ~ file: index.js:49 ~ renderOneDuckInNav ~ duckObj:",
-//     duckObj
-//   );
-  const duckImage = document.createElement('img')
-  duckImage.src = duckObj.img_url
-  console.log("🚀 ~ file: index.js:53 ~ renderOneDuckInNav ~ duckImage:", duckImage)
-    duckNav.append(duckImage)
+  //   console.log(
+  //     "🚀 ~ file: index.js:49 ~ renderOneDuckInNav ~ duckObj:",
+  //     duckObj
+  //   );
+  const duckImage = document.createElement("img");
+  duckImage.src = duckObj.img_url;
+  duckImage.addEventListener("click", () => renderDuckInDisplay(duckObj));
+  //   console.log("🚀 ~ file: index.js:53 ~ renderOneDuckInNav ~ duckImage:", duckImage)
+  duckNav.append(duckImage);
+}
+
+function renderDuckInDisplay(duckObj) {
+  console.log(
+    "🚀 ~ file: index.js:61 ~ renderDuckInDisplay ~ duckObj:",
+    duckObj
+  );
+  duckDisplayName.textContent = duckObj.name
+  duckDisplayImage.src = duckObj.img_url
+  duckDisplayLikes.textContent = `${duckObj.likes} likes`
 }
 
 // Initializers
