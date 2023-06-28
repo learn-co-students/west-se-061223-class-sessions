@@ -31,7 +31,7 @@ const duckNav = document.querySelector("#duck-nav");
 const duckDisplayName = document.querySelector("#duck-display-name");
 const duckDisplayImage = document.querySelector("#duck-display-image");
 const duckDisplayLikes = document.querySelector("#duck-display-likes");
-const newDuckForm = document.querySelector("#new-duck-form")
+const newDuckForm = document.querySelector("#new-duck-form");
 
 // Fetch functions
 function getDucks(url) {
@@ -39,30 +39,30 @@ function getDucks(url) {
 }
 
 // Event listeners (for elements already in DOM)
-duckDisplayLikes.addEventListener('click', handleAddLikes)
-newDuckForm.addEventListener('submit', handleDuckSubmit)
+duckDisplayLikes.addEventListener("click", handleAddLikes);
+newDuckForm.addEventListener("submit", handleDuckSubmit);
 
 // Event handlers
-function handleDuckSubmit(e){
-    e.preventDefault();
-    const name = e.target["duck-name-input"].value
-    const img_url = e.target["duck-image-input"].value
-    const newDuck = {
-        name,
-        img_url,
-        likes: 0
-    }
-    renderOneDuckInNav(newDuck)
-    e.target.reset()
+function handleDuckSubmit(e) {
+  e.preventDefault();
+  const name = e.target["duck-name-input"].value;
+  const img_url = e.target["duck-image-input"].value;
+  const newDuck = {
+    name,
+    img_url,
+    likes: 0,
+  };
+  renderOneDuckInNav(newDuck);
+  e.target.reset();
 }
 
-function handleAddLikes(){
-    selectedDuck.likes += 1
-    renderDuckInDisplay(selectedDuck)
-    // console.log(parseInt(duckDisplayLikes.textContent.split(" ")[0]))
-    // let currLikes = parseInt(duckDisplayLikes.textContent.split(" ")[0]) // get the string, split it, get 1st arr element and parse it into integer
-    // currLikes += 1 // increment the resulting value
-    // duckDisplayLikes.textContent = `${currLikes} likes` // replace button text with new likes value
+function handleAddLikes() {
+  selectedDuck.likes += 1;
+  renderDuckInDisplay(selectedDuck);
+  // console.log(parseInt(duckDisplayLikes.textContent.split(" ")[0]))
+  // let currLikes = parseInt(duckDisplayLikes.textContent.split(" ")[0]) // get the string, split it, get 1st arr element and parse it into integer
+  // currLikes += 1 // increment the resulting value
+  // duckDisplayLikes.textContent = `${currLikes} likes` // replace button text with new likes value
 }
 
 // Render functions
@@ -84,14 +84,14 @@ function renderOneDuckInNav(duckObj) {
 }
 
 function renderDuckInDisplay(duckObj) {
-//   console.log(
-//     "🚀 ~ file: index.js:61 ~ renderDuckInDisplay ~ duckObj:",
-//     duckObj
-//   );
-    selectedDuck = duckObj
-  duckDisplayName.textContent = duckObj.name
-  duckDisplayImage.src = duckObj.img_url
-  duckDisplayLikes.textContent = `${duckObj.likes} likes`
+  //   console.log(
+  //     "🚀 ~ file: index.js:61 ~ renderDuckInDisplay ~ duckObj:",
+  //     duckObj
+  //   );
+  selectedDuck = duckObj;
+  duckDisplayName.textContent = duckObj.name;
+  duckDisplayImage.src = duckObj.img_url;
+  duckDisplayLikes.textContent = `${duckObj.likes} likes`;
 }
 
 // Initializers
