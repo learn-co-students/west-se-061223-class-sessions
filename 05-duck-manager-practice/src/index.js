@@ -24,6 +24,7 @@
 
 // Global vars
 const URL = "http://localhost:3000/ducks";
+let selectedDuck;
 
 // DOM Selectors
 const duckNav = document.querySelector("#duck-nav");
@@ -37,8 +38,16 @@ function getDucks(url) {
 }
 
 // Event listeners (for elements already in DOM)
-
+duckDisplayLikes.addEventListener('click', addLikes)
 // Event handlers
+function addLikes(){
+    selectedDuck.likes += 1
+    renderDuckInDisplay(selectedDuck)
+    // console.log(parseInt(duckDisplayLikes.textContent.split(" ")[0]))
+    // let currLikes = parseInt(duckDisplayLikes.textContent.split(" ")[0]) // get the string, split it, get 1st arr element and parse it into integer
+    // currLikes += 1 // increment the resulting value
+    // duckDisplayLikes.textContent = `${currLikes} likes` // replace button text with new likes value
+}
 
 // Render functions
 function renderAllDucksInNav(duckArr) {
@@ -59,10 +68,11 @@ function renderOneDuckInNav(duckObj) {
 }
 
 function renderDuckInDisplay(duckObj) {
-  console.log(
-    "🚀 ~ file: index.js:61 ~ renderDuckInDisplay ~ duckObj:",
-    duckObj
-  );
+//   console.log(
+//     "🚀 ~ file: index.js:61 ~ renderDuckInDisplay ~ duckObj:",
+//     duckObj
+//   );
+    selectedDuck = duckObj
   duckDisplayName.textContent = duckObj.name
   duckDisplayImage.src = duckObj.img_url
   duckDisplayLikes.textContent = `${duckObj.likes} likes`
