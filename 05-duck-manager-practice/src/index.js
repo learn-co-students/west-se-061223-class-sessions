@@ -57,7 +57,7 @@ function handleDuckSubmit(e) {
 }
 
 function handleAddLikes() {
-  selectedDuck.likes += 1;
+  selectedDuck.likes += 1; // selectedDuck.likes = selectedDuck.likes + 1
   renderDuckInDisplay(selectedDuck);
   // console.log(parseInt(duckDisplayLikes.textContent.split(" ")[0]))
   // let currLikes = parseInt(duckDisplayLikes.textContent.split(" ")[0]) // get the string, split it, get 1st arr element and parse it into integer
