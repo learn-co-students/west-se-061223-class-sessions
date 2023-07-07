@@ -1,19 +1,20 @@
 import React from "react";
 
-function UserCard(props) {
+function UserCard({user, handleUserClick}) {
+  const { id, handle, photo, description} = user
   return (
     <div className="card">
       <div className="content">
         <img
           className="right floated mini ui image"
-          alt={props.handle}
-          src={props.photo}
+          alt={handle}
+          src={photo}
         />
-        <div className="header">{props.handle}</div>
-        <div className="description">{props.description}</div>
+        <div className="header">{handle}</div>
+        <div className="description">{description}</div>
       </div>
       <div
-        onClick={() => props.handleUserClick(props.id)}
+        onClick={() => handleUserClick(id)}
         className="ui bottom attached button"
       >
         <i className="add icon"></i>
