@@ -1,9 +1,9 @@
 ## Stories
 A user can: 
-1. [] See all hog cards w/name and image on load
+1. [x] See all hog cards w/name and image on load
  - "ui grid container" on parent of all hogs
  - "ui eight wide column" on children
-2. [] Click a hog and see more details
+2. [x] Click a hog and see more details
  - HogDetail will be conditionally rendered as Child of HogTile
 4. [] Use a dropdown to sort by name or weight
 

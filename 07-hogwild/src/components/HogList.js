@@ -1,13 +1,13 @@
 import React from 'react'
 import HogTile from './HogTile'
 
-function HogList() {
+function HogList({ hogs }) {
+  console.log("🚀 ~ file: HogList.js:5 ~ HogList ~ hogs:", hogs)
+
+  const pigpen = hogs.map(hog => <HogTile key={hog.name + hog.weight} hog={hog} />)
   return (
-    <div>
-        <h1>HogList</h1>
-        <HogTile />
-        <HogTile />
-        <HogTile />
+    <div className='ui three stackable cards'>
+        {pigpen}
     </div>
   )
 }
