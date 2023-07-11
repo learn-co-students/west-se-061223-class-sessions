@@ -16,11 +16,14 @@ function MainContainer() {
 
   function addToPortfolio(stock){
     // todo: prevent duplicates
-    console.log("🚀 ~ file: MainContainer.js:18 ~ addToPortfolio ~ stock:", stock)
     setPortfolio(portfolio => [...portfolio, stock])
   }
 
-  
+  function removeFromPortfolio(deletedStock){
+    setPortfolio(portfolio => portfolio.filter(stock => stock.id !== deletedStock.id))
+  }
+
+
 
   return (
     <div>
@@ -35,6 +38,7 @@ function MainContainer() {
         <div className="col-4">
           <PortfolioContainer
             portfolio={portfolio}
+            onRemoveStock={removeFromPortfolio}
           />
         </div>
       </div>
