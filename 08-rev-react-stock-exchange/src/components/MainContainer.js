@@ -7,6 +7,8 @@ function MainContainer() {
 
   const [stocks, setStocks] = useState([])
   const [portfolio, setPortfolio] = useState([])
+  const [sortBy, setSortBy] = useState("Alphabetically")
+  const [filterBy, setFilterBy] = useState("Tech")
 
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
@@ -23,16 +25,29 @@ function MainContainer() {
     setPortfolio(portfolio => portfolio.filter(stock => stock.id !== deletedStock.id))
   }
 
-
+const stocksToDisplay = [...stocks]
+  .sort((stockA, stockB) => {
+    if (sortBy === "Alphabetically"){
+      return stockA.ticker.localeCompare(stockB.ticker)
+    } else {
+      return stockA.price - stockB.price
+    }
+  })
+  .filter(stock => stock.type === filterBy)
 
   return (
     <div>
-      <SearchBar />
+      <SearchBar 
+        sortBy={sortBy}
+        onSortChange={setSortBy}
+        filterBy={filterBy}
+        onFilterChange={setFilterBy}
+      />
       <div className="row">
         <div className="col-8">
           <StockContainer  
             onAddPortfolio={addToPortfolio}
-            stocks={stocks}
+            stocks={stocksToDisplay}
           />
         </div>
         <div className="col-4">
