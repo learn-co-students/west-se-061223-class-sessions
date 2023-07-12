@@ -4,20 +4,23 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
-
-  const [plants, setPlants] = useState([])
+  const [plants, setPlants] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
-      .then(res => res.json())
-      .then(setPlants)
-  }, [])
+      .then((res) => res.json())
+      .then(setPlants);
+  }, []);
+
+  function addPlant(newPlant) {
+    setPlants(currPlants => [...currPlants, newPlant]);
+  }
 
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onAddPlant={addPlant} />
       <Search />
-      <PlantList plants={plants} /> 
+      <PlantList plants={plants} />
     </main>
   );
 }
