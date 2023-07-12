@@ -16,9 +16,11 @@ function MainContainer() {
       .then(setStocks)
   }, [])
 
-  function addToPortfolio(stock){
+  function addToPortfolio(stockToAdd){
     // todo: prevent duplicates
-    setPortfolio(portfolio => [...portfolio, stock])
+    if (!portfolio.some(stock => stock.id === stockToAdd.id)){
+      setPortfolio(portfolio => [...portfolio, stockToAdd])
+    }
   }
 
   function removeFromPortfolio(deletedStock){
@@ -33,7 +35,7 @@ const stocksToDisplay = [...stocks]
       return stockA.price - stockB.price
     }
   })
-  .filter(stock => stock.type === filterBy)
+  .filter(stock => stock.type.includes(filterBy))
 
   return (
     <div>
