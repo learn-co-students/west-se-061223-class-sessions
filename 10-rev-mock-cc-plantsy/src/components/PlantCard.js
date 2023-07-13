@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import EditPlantForm from "./EditPlantForm";
 
-function PlantCard({id, image = "https://via.placeholder.com/400", name, price}) {
+function PlantCard({id, image, name, price, onUpdatePlant}) {
   const [isInStock, setIsInStock] = useState(true)
 
   const toggleInStock = () => setIsInStock(isInStock => !isInStock)
@@ -15,6 +16,7 @@ function PlantCard({id, image = "https://via.placeholder.com/400", name, price})
       ) : (
         <button onClick={toggleInStock} >Out of Stock</button>
       )}
+      <EditPlantForm id={id} price={price} onUpdatePlant={onUpdatePlant} />
     </li>
   );
 }
