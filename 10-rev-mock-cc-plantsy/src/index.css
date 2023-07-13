@@ -1,5 +1,7 @@
 :root {
   --green: rgb(39, 189, 39);
+  --red: rgb(255, 0, 0);
+  --brown: rgb(77, 37, 7); 
 }
 
 * {
@@ -25,6 +27,18 @@ button {
 
 button.primary {
   background-color: var(--green);
+  color: white;
+}
+
+button.danger {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 25px;
+}
+
+button.secondary {
+  background-color: var(--brown); 
   color: white;
 }
 
