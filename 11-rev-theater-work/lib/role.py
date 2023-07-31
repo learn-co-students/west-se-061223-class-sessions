@@ -18,5 +18,11 @@ class Role:
             raise Exception("Character_name string cannot be empty")
         self._character_name = character_name
 
+    def auditions(self):
+        return [audition for audition in Audition.all if audition.role == self]
+
+    def actors(self):
+        return [audition.actor for audition in self.auditions()]
+
     def __repr__(self):
         return f"<Role {self.character_name}>"
