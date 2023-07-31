@@ -17,3 +17,6 @@ class Role:
         if not len(character_name):
             raise Exception("Character_name string cannot be empty")
         self._character_name = character_name
+
+    def __repr__(self):
+        return f"<Role {self.character_name}>"

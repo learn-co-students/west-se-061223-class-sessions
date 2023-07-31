@@ -19,5 +19,8 @@ class Audition:
             raise Exception("actor name must be between 3 and 20 characters")
         self._actor = actor
 
+    def call_back(self):
+        self.hired = True
+
     def __repr__(self):
         return f"<Audition | actor: {self.actor}, hired: {self.hired}>"
