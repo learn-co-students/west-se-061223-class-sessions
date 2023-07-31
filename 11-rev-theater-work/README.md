@@ -84,7 +84,7 @@ build out any helper methods if needed.
 
 - [x]`Role auditions(self)` returns all of the auditions associated with this role 
 - [x]`Role actors(self)` returns an list of names from the actors associated with this role
-- `Role locations(self)` returns an list of locations from the auditions associated with this role
+- [x]`Role locations(self)` returns an list of locations from the auditions associated with this role
 
 ### Aggregate and Association Methods
 

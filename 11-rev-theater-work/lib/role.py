@@ -24,5 +24,30 @@ class Role:
     def actors(self):
         return [audition.actor for audition in self.auditions()]
 
+    def locations(self):
+        return [audition.location for audition in self.auditions()]
+
+    def lead(self):
+        hired_auditions = [audition for audition in self.auditions() if audition.hired]
+        if not hired_auditions:
+            return "No actors have hired for this role"
+        else:
+            return hired_auditions[0]
+
+    def understudy(self):
+        hired_auditions = [audition for audition in self.auditions() if audition.hired]
+        if len(hired_auditions) <= 1:
+            return "No understudy has hired for this role"
+        else:
+            return hired_auditions[1]
+
+    @classmethod
+    def not_cast(cls):
+        return [
+            role
+            for role in cls.all
+            if not any([audition.hired for audition in role.auditions()])
+        ]
+
     def __repr__(self):
         return f"<Role {self.character_name}>"
