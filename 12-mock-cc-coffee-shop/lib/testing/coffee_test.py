@@ -21,8 +21,8 @@ class TestCoffee:
         """Cannot change the name of the coffee"""
         coffee = Coffee("Mocha")
 
-        # with pytest.raises(Exception):
-        #     coffee.name = "Peppermint Mocha"
+        with pytest.raises(Exception):
+            coffee.name = "Peppermint Mocha"
 
     def test_has_many_orders(self):
         """coffee has many orders."""
@@ -31,7 +31,7 @@ class TestCoffee:
         customer = Customer("Steve")
         order_1 = Order(customer, coffee, 2)
         order_2 = Order(customer, coffee, 5)
-        order_3 = Order(customer, coffee_2, 15)
+        order_3 = Order(customer, coffee_2, 5)
 
         assert len(coffee.orders()) == 2
         assert order_1 in coffee.orders()
