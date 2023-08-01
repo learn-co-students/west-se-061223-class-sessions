@@ -20,7 +20,7 @@ class Coffee:
         return [order for order in Order.all if order.coffee == self]
 
     def customers(self):
-        pass
+        return [*set([order.customer for order in self.orders()])]
 
     def num_orders(self):
         pass
