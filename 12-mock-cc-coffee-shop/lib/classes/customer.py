@@ -17,7 +17,10 @@ class Customer:
             raise Exception("name is invalid")
 
     def orders(self):
-        pass
+        return [order for order in Order.all if order.customer == self]
 
     def coffees(self):
-        pass
+        return [*set([order.coffee for order in self.orders()])]
+
+    def create_order(self, coffee, price):
+        return Order(self, coffee, price)

@@ -23,7 +23,7 @@ class Coffee:
         return [*set([order.customer for order in self.orders()])]
 
     def num_orders(self):
-        pass
+        return len(self.orders())
 
     def average_price(self):
-        pass
+        return sum([order.price for order in self.orders()]) / self.num_orders()

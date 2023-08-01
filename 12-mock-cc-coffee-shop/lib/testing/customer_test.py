@@ -44,7 +44,7 @@ class TestCustomer:
         customer_2 = Customer("Dima")
         order_1 = Order(customer, coffee, 2)
         order_2 = Order(customer, coffee, 5)
-        order_3 = Order(customer_2, coffee, 15)
+        order_3 = Order(customer_2, coffee, 5)
 
         assert len(customer.orders()) == 2
         assert not order_3 in customer.orders()
