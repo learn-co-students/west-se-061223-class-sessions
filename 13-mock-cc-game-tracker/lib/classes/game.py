@@ -17,10 +17,13 @@ class Game:
             raise Exception
 
     def results(self):
-        pass
+        return [result for result in Result.all if result.game == self]  # like a filter
 
     def players(self):
-        pass
+        return [result.player for result in self.results()]  # like a map
 
     def average_score(self, player):
-        pass
+        player_scores = [res.score for res in self.results() if res.player == player]
+        if player_scores:
+            return sum(player_scores) / len(player_scores)
+        return 0
