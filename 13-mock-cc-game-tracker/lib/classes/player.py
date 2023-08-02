@@ -39,12 +39,14 @@ class Player:
 
     @classmethod
     def highest_scored(cls, game):
-        if cls.all:
-            max_player = None
-            max_score = 0
-            for player in cls.all:
-                if game.average_score(player) > max_score:
-                    max_player = player
-                    max_score = game.average_score(player)
-            return max_player
-        return None
+        # if cls.all:
+        #     max_player = None
+        #     max_score = 0
+        #     for player in cls.all:
+        #         if game.average_score(player) > max_score:
+        #             max_player = player
+        #             max_score = game.average_score(player)
+        #     return max_player
+        # return None
+        # return sorted(cls.all, key=lambda player: game.average_score(player))[-1]
+        return max(cls.all, key=lambda player: game.average_score(player))
