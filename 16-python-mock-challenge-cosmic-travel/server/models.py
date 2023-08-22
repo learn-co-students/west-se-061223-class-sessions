@@ -47,7 +47,7 @@ class Scientist(db.Model, SerializerMixin):
     planets = association_proxy("missions", "planet")
 
     # Add serialization rules
-    serialize_rules = ("-missions.planet", "-missions.scientist",)
+    serialize_rules = ("-missions", "-missions.scientist",)
 
     # Add validation
     @validates('name', 'field_of_study')
