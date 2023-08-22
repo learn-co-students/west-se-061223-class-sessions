@@ -79,10 +79,14 @@ class Signup(db.Model, SerializerMixin):
     camper_id = db.Column(db.Integer, db.ForeignKey("campers.id"))
     activity_id = db.Column(db.Integer, db.ForeignKey("activities.id"))
 
-    # belongs_to camper
+    # belongs_to camper, comes from backref on camper.signups relationship
     # belongs_to activity
 
     # Add serialization rules
+    serialize_rules = (
+        "-activity.signups",
+        "-camper.signups",
+    )
 
     # Add validation
     @validates("time")
