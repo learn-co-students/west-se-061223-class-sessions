@@ -31,7 +31,7 @@ class Activity(db.Model, SerializerMixin):
 
     # Add serialization rules
 
-    serialize_rules = ("-signups.activity",)
+    serialize_rules = ("-signups.activity", "-signups.camper")
 
     def __repr__(self):
         return f"<Activity {self.id}: {self.name}>"
