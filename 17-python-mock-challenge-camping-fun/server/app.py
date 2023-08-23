@@ -51,7 +51,9 @@ class CamperById(Resource):
         camper = Camper.query.get(id)
         if not camper:
             return make_response({"error": "Camper not found"}, 404)
-        return make_response(camper.to_dict(rules=("-signups.activity.signups",)), 200)
+        return make_response(
+            jsonify(camper.to_dict(rules=("-signups.activity.signups",))), 200
+        )
 
     def patch(self, id):
         camper = Camper.query.get(id)
