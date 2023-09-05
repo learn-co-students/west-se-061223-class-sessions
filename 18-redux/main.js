@@ -46,7 +46,7 @@ store.subscribe(() => {
   })
 })
 
-store.dispatch({ type: "addTenDollars"})
+store.dispatch({ type: "addTenDollars"}) // => reducer(store.getState(), {action...})
 console.log("🚀 ~ file: main.js:13 ~ store:", store.getState())
 
 const addBtn = document.querySelector('#add10')
