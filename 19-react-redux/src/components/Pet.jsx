@@ -1,17 +1,22 @@
 import React from 'react'
+import { useDispatch} from 'react-redux'
+import {adoptPet} from '../features/pets/petsSlice'
 
 
 export default function Pet({pet}) {
 
-
+  
+  const dispatch = useDispatch()
 
     function handleAdoptClick() {
-      console.log("adopted")
+      dispatch(adoptPet(pet.id))
     }  
 
-    if (isLoading) {
-      return <h1>Loading...</h1>
-    }
+
+
+    // if (isLoading) {
+    //   return <h1>Loading...</h1>
+    // }
 
     return (
     <div className="card" data-testid="pet">

@@ -3,17 +3,18 @@ import Pet from "./Pet";
 import Filters from './Filters';
 import RotateLoader from 'react-spinners/RotateLoader'
 import {css} from '@emotion/react'
+import { useSelector} from 'react-redux'
 
 
 function PetBrowser() {
 
-   
+   const pets = useSelector(state => state.pets)
 
 
-  const petCards = []
-  // const petCards = data.map((pet) => (
-  //   <Pet key={pet.id} pet={pet} />
-  // ));
+
+  const petCards = pets.map((pet) => (
+    <Pet key={pet.id} pet={pet} />
+  ));
 
   return (
       <div>
